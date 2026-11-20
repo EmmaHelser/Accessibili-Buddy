@@ -1,0 +1,12 @@
+[
+  {
+    "id": 1,
+    "name": "Turn on the flashlight",
+    "steps": [
+      "Swiped down from the top of the screen",
+      "Tap the flashlight button"
+    ],
+    "level": "beginner",
+    "category": ["general"]
+  }
+]
