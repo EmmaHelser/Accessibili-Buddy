@@ -1,6 +1,8 @@
 package com.experimental.accessibili_buddy.home
 
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.FlowRow
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -35,15 +37,15 @@ fun HomeScreen(
 fun CategoryButtons(
     modifier: Modifier = Modifier,
 ) {
-    Row(
-        modifier = modifier.fillMaxWidth()
+    FlowRow(
+        modifier = modifier.fillMaxWidth(),
+        horizontalArrangement = Arrangement.spacedBy(8.dp),
     ) {
         for (category in CategoryEnum.entries) {
             AssistChip(
                 onClick = {},
                 label = { Text(category.displayName) }
             )
-            Spacer(modifier = Modifier.width(8.dp))
         }
     }
 }
