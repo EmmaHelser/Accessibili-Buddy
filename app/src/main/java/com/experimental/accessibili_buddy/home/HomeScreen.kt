@@ -5,6 +5,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.FlowRow
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
@@ -22,13 +23,14 @@ fun HomeScreen(
     modifier: Modifier = Modifier,
 ) {
     Column(
-        modifier = modifier.fillMaxWidth().padding(16.dp),
+        modifier = modifier.fillMaxSize().padding(16.dp),
+        verticalArrangement = Arrangement.Center,
     ) {
         Text(
             text = "What do you need help with today?",
-            style = MaterialTheme.typography.headlineMedium,
+            style = MaterialTheme.typography.headlineLarge,
         )
-        Spacer(modifier = Modifier.height(16.dp))
+        Spacer(modifier = Modifier.height(24.dp))
         CategoryButtons()
     }
 }
@@ -42,10 +44,17 @@ fun CategoryButtons(
         horizontalArrangement = Arrangement.spacedBy(8.dp),
     ) {
         for (category in CategoryEnum.entries) {
-            AssistChip(
-                onClick = {},
-                label = { Text(category.displayName) }
-            )
+            if (category.ranking == 1) {
+                AssistChip(
+                    onClick = {},
+                    label = {
+                        Text(
+                            text = category.displayName,
+                            style = MaterialTheme.typography.titleMedium,
+                        )
+                    }
+                )
+            }
         }
     }
 }
