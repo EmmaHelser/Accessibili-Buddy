@@ -2,6 +2,8 @@ package com.experimental.accessibili_buddy.data
 
 import android.content.res.AssetManager
 import kotlinx.serialization.json.Json
+import javax.inject.Inject
+import javax.inject.Singleton
 
 interface Repository {
     fun getAllTutorials(): List<Tutorial>
@@ -9,7 +11,8 @@ interface Repository {
     fun getTutorial(tutorialId: Int): Tutorial?
 }
 
-class RealRepository(
+@Singleton
+class RealRepository @Inject constructor(
     private val assetManager: AssetManager,
 ) : Repository {
     private val allTutorials = mutableListOf<Tutorial>()
