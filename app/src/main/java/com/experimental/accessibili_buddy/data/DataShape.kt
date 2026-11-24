@@ -20,7 +20,7 @@ enum class LevelEnum(displayName: String) {
 }
 
 @Serializable
-enum class CategoryEnum(displayName: String) {
+enum class CategoryEnum(val displayName: String) {
     @SerialName("camera") CAMERA("Camera"),
     @SerialName("texting") TEXTING("Texting"),
     @SerialName("general") GENERAL("General"),

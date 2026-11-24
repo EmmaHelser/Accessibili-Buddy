@@ -4,6 +4,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.material3.AssistChip
@@ -25,6 +26,7 @@ fun HomeScreen(
             text = "What do you need help with today?",
             style = MaterialTheme.typography.headlineMedium,
         )
+        Spacer(modifier = Modifier.height(16.dp))
         CategoryButtons()
     }
 }
@@ -39,7 +41,7 @@ fun CategoryButtons(
         for (category in CategoryEnum.entries) {
             AssistChip(
                 onClick = {},
-                label = { Text(category.name) }
+                label = { Text(category.displayName) }
             )
             Spacer(modifier = Modifier.width(8.dp))
         }
