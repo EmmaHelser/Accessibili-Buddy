@@ -19,6 +19,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.experimental.accessibili_buddy.home.HomeScreen
 import com.experimental.accessibili_buddy.ui.theme.AccessibiliBuddyTheme
 
 class MainActivity : ComponentActivity() {
@@ -78,8 +79,7 @@ class MainActivity : ComponentActivity() {
                         }
                     }
                 ) { innerPadding ->
-                    Greeting(
-                        name = "Android",
+                    HomeScreen(
                         modifier = Modifier.padding(innerPadding)
                     )
                 }
