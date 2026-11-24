@@ -12,7 +12,7 @@ interface Repository {
 class RealRepository(
     private val assetManager: AssetManager,
 ) : Repository {
-    val allTutorials = mutableListOf<Tutorial>()
+    private val allTutorials = mutableListOf<Tutorial>()
 
     init {
         val tutorials =  listOf(
