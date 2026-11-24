@@ -6,6 +6,14 @@ import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.BookmarkBorder
+import androidx.compose.material.icons.filled.FolderOpen
+import androidx.compose.material.icons.filled.Home
+import androidx.compose.material.icons.filled.Search
+import androidx.compose.material3.Icon
+import androidx.compose.material3.NavigationBar
+import androidx.compose.material3.NavigationBarItem
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -19,7 +27,57 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             AccessibiliBuddyTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
+                Scaffold(
+                    modifier = Modifier.fillMaxSize(),
+                    bottomBar = {
+                        NavigationBar() {
+                            NavigationBarItem(
+                                selected = true,
+                                onClick = {},
+                                icon = {
+                                    Icon(
+                                        Icons.Default.Home,
+                                        "Home",
+                                    )
+                                },
+                                label = {},
+                            )
+                            NavigationBarItem(
+                                selected = true,
+                                onClick = {},
+                                icon = {
+                                    Icon(
+                                        Icons.Default.Search,
+                                        "Search tutorials",
+                                    )
+                                },
+                                label = {},
+                            )
+                            NavigationBarItem(
+                                selected = true,
+                                onClick = {},
+                                icon = {
+                                    Icon(
+                                        Icons.Default.FolderOpen,
+                                        "Browse all tutorials",
+                                    )
+                                },
+                                label = {},
+                            )
+                            NavigationBarItem(
+                                selected = true,
+                                onClick = {},
+                                icon = {
+                                    Icon(
+                                        Icons.Default.BookmarkBorder,
+                                        "Saved tutorials",
+                                    )
+                                },
+                                label = {},
+                            )
+                        }
+                    }
+                ) { innerPadding ->
                     Greeting(
                         name = "Android",
                         modifier = Modifier.padding(innerPadding)
