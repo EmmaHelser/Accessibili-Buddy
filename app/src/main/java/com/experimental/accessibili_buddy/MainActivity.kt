@@ -41,67 +41,14 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             val navController = rememberNavController()
-            val backStackEntry by navController.currentBackStackEntryAsState()
-            val currentDestination = backStackEntry?.destination
 
             AccessibiliBuddyTheme {
                 Scaffold(
                     modifier = Modifier.fillMaxSize(),
                     bottomBar = {
-                        NavigationBar() {
-                            NavigationBarItem(
-                                selected = currentDestination?.hasRoute<HomeRoute>() == true,
-                                onClick = {
-                                    navController.navigateToTab(HomeRoute)
-                                },
-                                icon = {
-                                    Icon(
-                                        Icons.Default.Home,
-                                        "Home",
-                                    )
-                                },
-                                label = {},
-                            )
-                            NavigationBarItem(
-                                selected = currentDestination?.hasRoute<SearchRoute>() == true,
-                                onClick = {
-                                    navController.navigateToTab(SearchRoute)
-                                },
-                                icon = {
-                                    Icon(
-                                        Icons.Default.Search,
-                                        "Search tutorials",
-                                    )
-                                },
-                                label = {},
-                            )
-                            NavigationBarItem(
-                                selected = currentDestination?.hasRoute<BrowseRoute>() == true,
-                                onClick = {
-                                    navController.navigateToTab(BrowseRoute())
-                                },
-                                icon = {
-                                    Icon(
-                                        Icons.Default.FolderOpen,
-                                        "Browse all tutorials",
-                                    )
-                                },
-                                label = {},
-                            )
-                            NavigationBarItem(
-                                selected = currentDestination?.hasRoute<SavedRoute>() == true,
-                                onClick = {
-                                    navController.navigateToTab(SavedRoute)
-                                },
-                                icon = {
-                                    Icon(
-                                        Icons.Default.BookmarkBorder,
-                                        "Saved tutorials",
-                                    )
-                                },
-                                label = {},
-                            )
-                        }
+                        NavBar(
+                            navController = navController,
+                        )
                     }
                 ) { innerPadding ->
                     NavHost(
