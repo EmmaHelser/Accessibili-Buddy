@@ -44,7 +44,7 @@ class MainActivity : ComponentActivity() {
                                 label = {},
                             )
                             NavigationBarItem(
-                                selected = true,
+                                selected = false,
                                 onClick = {},
                                 icon = {
                                     Icon(
@@ -55,7 +55,7 @@ class MainActivity : ComponentActivity() {
                                 label = {},
                             )
                             NavigationBarItem(
-                                selected = true,
+                                selected = false,
                                 onClick = {},
                                 icon = {
                                     Icon(
@@ -66,7 +66,7 @@ class MainActivity : ComponentActivity() {
                                 label = {},
                             )
                             NavigationBarItem(
-                                selected = true,
+                                selected = false,
                                 onClick = {},
                                 icon = {
                                     Icon(
