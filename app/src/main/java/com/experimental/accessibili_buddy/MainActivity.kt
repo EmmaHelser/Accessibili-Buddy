@@ -33,8 +33,11 @@ import com.experimental.accessibili_buddy.data.SearchRoute
 import com.experimental.accessibili_buddy.data.TutorialRoute
 import com.experimental.accessibili_buddy.data.navigateToTab
 import com.experimental.accessibili_buddy.home.HomeScreen
+import com.experimental.accessibili_buddy.search.SearchScreen
 import com.experimental.accessibili_buddy.ui.theme.AccessibiliBuddyTheme
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -61,7 +64,11 @@ class MainActivity : ComponentActivity() {
                                 modifier = Modifier.padding(innerPadding)
                             )
                         }
-                        composable<SearchRoute> { /* SearchScreen */ }
+                        composable<SearchRoute> {
+                            SearchScreen(
+                                modifier = Modifier.padding(innerPadding)
+                            )
+                        }
                         composable<BrowseRoute> { /* BrowseScreen */ }
                         composable<SavedRoute> { /* SavedScreen */ }
                         composable<TutorialRoute> { /* TutorialScreen */ }
