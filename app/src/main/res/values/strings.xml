@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Accessibili-Buddy</string>
+    <string name="beginner_tag">Beginner</string>
+    <string name="intermediate_tag">Intermediate</string>
+    <string name="advanced_tag">Advanced</string>
+    <string name="home_screen_prompt">What do you need help with today?</string>
 </resources>
