@@ -1,5 +1,7 @@
 package com.experimental.accessibili_buddy.data
 
+import androidx.annotation.StringRes
+import com.experimental.accessibili_buddy.R
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
@@ -13,10 +15,10 @@ data class Tutorial(
 )
 
 @Serializable
-enum class LevelEnum(displayName: String) {
-    @SerialName("beginner") BEGINNER("Beginner"),
-    @SerialName("intermediate") INTERMEDIATE("Intermediate"),
-    @SerialName("advanced") ADVANCED("Advanced"),
+enum class LevelEnum(@StringRes val displayName: Int) {
+    @SerialName("beginner") BEGINNER(R.string.beginner_tag),
+    @SerialName("intermediate") INTERMEDIATE(R.string.intermediate_tag),
+    @SerialName("advanced") ADVANCED(R.string.advanced_tag),
 }
 
 @Serializable

@@ -15,7 +15,9 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import com.experimental.accessibili_buddy.R
 import com.experimental.accessibili_buddy.data.CategoryEnum
 
 @Composable
@@ -27,7 +29,7 @@ fun HomeScreen(
         verticalArrangement = Arrangement.Center,
     ) {
         Text(
-            text = "What do you need help with today?",
+            text = stringResource(R.string.home_screen_prompt),
             style = MaterialTheme.typography.headlineLarge,
         )
         Spacer(modifier = Modifier.height(24.dp))
